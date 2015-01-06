@@ -1,0 +1,97 @@
+
+@url_type_sprite: "sprite.type.png";
+
+.glyphicon-star-empty, .glyphicon-star {
+  color: goldenrod
+}
+
+.icon-monster-type {
+  background: url("@{url_type_sprite}") no-repeat;
+  padding: 9px;  
+}
+
+.icon {
+  &.fire {
+    background: url("element.1.png") no-repeat;
+    padding: 12px;
+  }
+  &.water {
+    background: url("element.2.png") no-repeat;
+    padding: 12px;
+  }
+  &.wood {
+    background: url("element.3.png") no-repeat;
+    padding: 12px;
+  }
+  &.light {
+    background: url("element.4.png") no-repeat;
+    padding: 12px;
+  }
+  &.dark {
+    background: url("element.5.png") no-repeat;
+    padding: 12px;
+  }
+
+  &.devil {
+    .icon-monster-type;
+    background-position: 0px -1px;
+  }
+
+  &.attacker {
+    .icon-monster-type;
+    background-position: -18px -1px;
+  }
+
+  &.god {
+    .icon-monster-type;
+    background-position: -36px -1px;
+  }
+
+  &.enhance_material {
+    .icon-monster-type;
+    background-position: -54px -1px;
+  }
+
+  &.dragon {
+    .icon-monster-type;
+    background-position: 0px -20px;
+  }
+
+  &.healer {
+    .icon-monster-type;
+    background-position: -18px -20px;
+  }
+
+  &.physical {
+    .icon-monster-type;
+    background-position: -36px -20px;
+  }
+
+  &.special_protected {
+    .icon-monster-type;
+    background-position: -54px -20px;
+  }
+
+  &.special2 {
+    .icon-monster-type;
+    background-position: 0px -39px;    
+  }
+
+  &.balanced {
+    .icon-monster-type;
+    background-position: -18px -39px;
+  }
+
+  &.evo_material {
+    .icon-monster-type;
+    background-position: -36px -39px;
+  }
+}
+.icon-btn {
+  padding: 4px;
+
+  &.selected {
+    background-color: silver;    
+  }  
+}
+
