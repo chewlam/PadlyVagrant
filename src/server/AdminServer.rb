@@ -4,18 +4,18 @@ class AdminServer < Sinatra::Base
   set :root, ROOT
 
   get '/' do
-    'Hello world!'
+    erb :mongo
   end
 
 
   get '/mongo/collections' do
     content_type :json
-    PadlyDatabase.collections.to_json
+    MongoPad.collections.to_json
   end
 
   get '/mongo/databases' do
     content_type :json
-    PadlyDatabase.databases.to_json
+    MongoPad.databases.to_json
   end
 
   def handle_data(data_type, data_set) 
@@ -69,13 +69,13 @@ class AdminServer < Sinatra::Base
 
     data.each do |name, url|
       puts "Processing #{name}"
-      PadlyDatabase.drop_collection(name.to_s)
+      MongoPad.drop_collection(name.to_s)
 
       file = open url
       file_data = file.read
       file_data = handle_data(name, file_data)
       file_data.each do |row|
-        PadlyDatabase.insert(name.to_s, row)
+        MongoPad.insert(name.to_s, row)
       end
     end
 
