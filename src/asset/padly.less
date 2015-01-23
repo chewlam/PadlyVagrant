@@ -6,8 +6,13 @@
 }
 
 .icon-monster-type {
-  background: url("@{url_type_sprite}") no-repeat;
+  background: url("sprite.type.png") no-repeat;
   padding: 9px;  
+}
+
+.icon-awoken-skills {
+  background: url("sprite.awoken.png") no-repeat;
+  padding: 10px 9.8px;
 }
 
 .icon {
@@ -32,6 +37,118 @@
     padding: 12px;
   }
 
+  &.enhanced_hp {
+    .icon-awoken-skills;
+    background-position: -76px -38px;
+  }
+  &.enhanced_attack {
+    .icon-awoken-skills;
+    background-position: -76px 0px;
+  }
+  &.enhanced_heal {
+    .icon-awoken-skills;
+    background-position: 0px -38px;
+  }
+  &.skill_boost {
+    .icon-awoken-skills;
+    background-position: -38px -57px;
+  }
+  &.extend_time {
+    .icon-awoken-skills;
+    background-position: -76px -19px;
+  }
+  &.enhanced_fire_attack {
+    .icon-awoken-skills;
+    background-position: -19px -57px;
+  }
+  &.enhanced_wood_attack {
+    .icon-awoken-skills;
+    background-position: -57px -38px;
+  }
+  &.enhanced_water_attack {
+    .icon-awoken-skills;
+    background-position: 0px -57px;
+  }
+  &.enhanced_light_attack {
+    .icon-awoken-skills;
+    background-position: -57px -19px;
+  }
+  &.enhanced_dark_attack {
+    .icon-awoken-skills;
+    background-position: -57px 0px;
+  }
+  &.enhanced_fire_orbs {
+    .icon-awoken-skills;
+    background-position: -38px -76px;
+  }
+  &.enhanced_water_orbs {
+    .icon-awoken-skills;
+    background-position: -19px -76px;
+  }
+  &.enhanced_wood_orbs {
+    .icon-awoken-skills;
+    background-position: 0px -76px;
+  }
+  &.enhanced_light_orbs {
+    .icon-awoken-skills;
+    background-position: -76px -57px;
+  }
+  &.enhanced_dark_orbs {
+    .icon-awoken-skills;
+    background-position: -76px -38px;
+  }
+  &.reduce_fire_damage {
+    .icon-awoken-skills;
+    background-position: -38px -19px;
+  }
+  &.reduce_water_damage {
+    .icon-awoken-skills;
+    background-position: -38px 0px;
+  }
+  &.reduce_wood_damage {
+    .icon-awoken-skills;
+    background-position: -19px -19px;
+  }
+  &.reduce_light_damage {
+    .icon-awoken-skills;
+    background-position: 0px -19px;
+  }
+  &.reduce_dark_damage {
+    .icon-awoken-skills;
+    background-position: -19px 0px;
+  }
+  &.resistance_bind {
+    .icon-awoken-skills;
+    background-position: -95px -19px;
+  }
+  &.resistance_dark {
+    .icon-awoken-skills;
+    background-position: -95px -0px;
+  }
+  &.resistance_jammers {
+    .icon-awoken-skills;
+    background-position: -76px -76px;
+  }
+  &.resistance_poison {
+    .icon-awoken-skills;
+    background-position: -57px -76px;
+  }
+  &.resistance_skill_lock {
+    .icon-awoken-skills;
+    background-position: -19px -38px;
+  }
+  &.auto_recover {
+    .icon-awoken-skills;
+    background-position: 0px 0px;
+  }
+  &.recover_bind {
+    .icon-awoken-skills;
+    background-position: -57px -57px;
+  }
+  &.two_prong_attack {
+    .icon-awoken-skills;
+    background-position: -38px -38px;
+  }
   &.devil {
     .icon-monster-type;
     background-position: 0px -1px;

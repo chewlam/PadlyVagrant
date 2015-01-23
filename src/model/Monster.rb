@@ -12,14 +12,16 @@ class Monster
 
     query['jp_only'] = false unless query['jp_only']
     query['name'] = /#{query['name']}/i if query['name']
+
     %w(element type).select{|f| query[f]}.each do |field|
       value = [query[field]]
       value = {:$in => value}
 
-      sub = field + '_sub'
-      query[:$and] = [] unless query[:$and] 
-      query[:$and] << {:$or => [{field => value}, {sub => value}]}
-      query.delete(field)
+      # sub = field + '_sub'
+      # query[:$and] = [] unless query[:$and]
+      # query[:$and] << {:$or => [{field => value}, {sub => value}]}
+      # query.delete(field)
+      query[field] = value
     end
 
     rows = @padly.find(query).to_a

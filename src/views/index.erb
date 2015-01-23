@@ -15,23 +15,33 @@
     <div name="search_form">
       <div><input type=textbox name='search_box' ng-model="search.textbox" placeholder='Search for ...'></div>
 
-      <div class='btn-group' role='group' aria-label="..." ng-init="elements=['fire', 'water', 'wood', 'light', 'dark']">
-        <button type='button' class="btn btn-default icon-btn {{(search.elements[element] && 'selected') || ''}}" ng-repeat="element in elements" ng-click="setElement()">
+      <div class='btn-group' role='group' aria-label="...">
+        <button type='button' class="btn btn-default icon-btn {{(search.elements[element] && 'selected') || ''}}" ng-repeat="element in ref.elements" ng-click="setElement()">
           <div class="icon {{element}}"></div>
         </button>
       </div>
       <br>
 
-      <div class='btn-group' role='group' aria-label="..." ng-init="types=['dragon', 'devil', 'balanced', 'attacker', 'physical', 'healer', 'god', 'evo_material', 'enhance_material']">
-        <button type='button' ng-repeat="type in types" class="btn btn-default icon-btn {{(search.types[type] && 'selected') || ''}}" ng-click="setType()">
+      <div class='btn-group' role='group' aria-label="...">
+        <button type='button' ng-repeat="type in ref.types" class="btn btn-default icon-btn {{(search.types[type] && 'selected') || ''}}" ng-click="setType()">
           <div class="icon {{type}}"></div>
         </button>
       </div>
+      <br>
+
+      <div class='btn-group' role='group' aria-label="..." style="width: 288px">
+        <button type='button' ng-repeat="skill in ref.awoken_skills" class="btn btn-default icon-btn {{(search.awoken_skills[skill] && 'selected') || ''}}" ng-click="setAwokenSkill()">
+          <div class="icon {{skill}}"></div>
+        </button>
+      </div>
+
 
       <div>Cost: <input type=textbox placeholder='0' size=3 ng-model="search.cost.min"> to <input type=textbox placeholder='Max' size=3 ng-model="search.cost.max"></div>
       <div>Rarity:
         <span ng-repeat="rarity in [1, 2, 3, 4, 5, 6, 7]" class="glyphicon glyphicon-star{{(rarity <= search.rarity && ' ') || '-empty'}}" aria-hidden="true" ng-click="setRarity()"></span>
       </div>
+
+
     </div>
 
     <button ng-click="loadData()">Search</button>

@@ -44,8 +44,22 @@ class AdminServer < Sinatra::Base
           @monster_images["#{monster_id}.60x60.png"] = "#{padherderUrl}#{row["image60_href"]}"
           @monster_images["#{monster_id}.40x40.png"] = "#{padherderUrl}#{row["image40_href"]}"
           @monster_images["#{monster_id}.full.png"] = "#{pdxImgUrl}MONS_#{monster_id}.jpg"
-          row['type_sub'] = row['type2'] || nil
-          row['element_sub'] = row['element2'] || nil
+
+          new_value = []
+          new_value << row['type']
+          new_value << row['type2'] if row['type2']
+          row['type'] = new_value
+
+          new_value = []
+          new_value << row['element']
+          new_value << row['element2'] if row['element2']
+          row['element'] = new_value
+
+          # row['type_sub'] = row['type2'] || nil
+          # row['element_sub'] = row['element2'] || nil
+          # row['type_sub'] = row['type2'] || nil
+          # row['element_sub'] = row['element2'] || nil
+
           row.delete 'id'
           row.delete 'element2'
           row.delete 'type2'
